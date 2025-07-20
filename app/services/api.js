@@ -1,4 +1,5 @@
-const API_URL = "http://localhost:3001/goals";
+const API_URL = "https://json-foods.onrender.com/goals";
+
 const api = {
 	getGoals: async () => {
 		const res = await fetch(API_URL);
