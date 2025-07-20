@@ -11,14 +11,14 @@ const Page = () => {
 	const [goals, setGoals] = useState([]);
 
 	useEffect(() => {
-		fetch("https://json-foods.onrender.com/goals")
+		fetch("https://json-goals.onrender.com/goals")
 			.then((r) => r.json())
 			.then(setGoals)
 			.catch(console.error);
 	}, []);
 
 	const handleAdd = (newGoal) => {
-		fetch("https://json-foods.onrender.com/goals", {
+		fetch("https://json-goals.onrender.com/goals", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(newGoal),
@@ -29,7 +29,7 @@ const Page = () => {
 	};
 
 	const handleUpdate = (id, updates) => {
-		fetch(`https://json-foods.onrender.com/goals/${id}`, {
+		fetch(`https://json-goals.onrender.com/goals/${id}`, {
 			method: "PATCH",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(updates),
@@ -42,7 +42,7 @@ const Page = () => {
 	};
 
 	const handleDelete = (id) => {
-		fetch(`https://json-foods.onrender.com/goals/${id}`, { method: "DELETE" })
+		fetch(`https://json-goals.onrender.com/goals/${id}`, { method: "DELETE" })
 			.then(() => setGoals((prev) => prev.filter((g) => g.id !== id)))
 			.catch(console.error);
 	};

@@ -1,4 +1,4 @@
-const API_URL = "https://json-foods.onrender.com/goals";
+const API_URL = "https://json-goals.onrender.com/goals";
 
 const api = {
 	getGoals: async () => {
